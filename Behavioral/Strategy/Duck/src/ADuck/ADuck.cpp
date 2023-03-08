@@ -1,4 +1,4 @@
-#include "ADuck.hpp"
+#include "../../inc/ADuck/ADuck.hpp"
 #include <cstddef>
 
 ADuck::ADuck(void)

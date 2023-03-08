@@ -1,4 +1,4 @@
-#include "Squeak.hpp"
+#include "../../inc/IQuackBehavior/Squeak.hpp"
 
 Squeak::Squeak(void)
 {

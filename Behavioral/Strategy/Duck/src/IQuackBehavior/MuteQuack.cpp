@@ -1,4 +1,4 @@
-#include "MuteQuack.hpp"
+#include "../../inc/IQuackBehavior/MuteQuack.hpp"
 
 MuteQuack::MuteQuack(void)
 {

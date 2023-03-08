@@ -1,8 +1,6 @@
 #include <iostream>
 
-#include "ADuck.hpp"
-#include "MallardDuck.hpp"
-
+#include "../../inc/ADuck/ADucks.h"
 
 int	main(void)
 {

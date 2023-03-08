@@ -1,7 +1,7 @@
 #pragma once
-# include "IFlyBehavior.hpp"
-# include "IQuackBehavior.hpp"
-# include "colors.h"
+# include "../IFlyBehavior/IFlyBehavior.hpp"
+# include "../IQuackBehavior/IQuackBehavior.hpp"
+# include "../colors.h"
 
 class ADuck
 {

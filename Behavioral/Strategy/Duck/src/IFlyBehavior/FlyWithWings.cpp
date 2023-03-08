@@ -1,4 +1,4 @@
-#include "FlyWithWings.hpp"
+#include "../../inc/IFlyBehavior/FlyWithWings.hpp"
 
 FlyWithWings::FlyWithWings(void)
 {

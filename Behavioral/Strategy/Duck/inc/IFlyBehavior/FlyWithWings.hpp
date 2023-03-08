@@ -1,6 +1,5 @@
 #pragma once
 # include "IFlyBehavior.hpp"
-# include "colors.h"
 
 class FlyWithWings: virtual public IFlyBehavior
 {

@@ -1,4 +1,4 @@
-#include "Quack.hpp"
+#include "../../inc/IQuackBehavior/Quack.hpp"
 
 Quack::Quack(void)
 {

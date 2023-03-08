@@ -1,4 +1,4 @@
-#include "MallardDuck.hpp"
+#include "../../inc/ADuck/MallardDuck.hpp"
 
 MallardDuck::MallardDuck(void)
 {

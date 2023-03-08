@@ -1,5 +1,5 @@
-#ifndef QUACKBEHAVIORS_h
-# define QUACKBEHAVIORS_h
+#ifndef IQUACKBEHAVIORS_h
+# define IQUACKBEHAVIORS_h
 # include "IQuackBehavior.hpp"
 # include "Quack.hpp"
 # include "Squeak.hpp"

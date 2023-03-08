@@ -1,6 +1,5 @@
 #pragma once
 # include "IQuackBehavior.hpp"
-# include "colors.h"
 
 class Squeak: virtual public IQuackBehavior
 {

@@ -1,4 +1,4 @@
-#include "FlyNoWay.hpp"
+#include "../../inc/IFlyBehavior/FlyNoWay.hpp"
 
 FlyNoWay::FlyNoWay(void)
 {

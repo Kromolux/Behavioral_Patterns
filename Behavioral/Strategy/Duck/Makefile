@@ -1,42 +1,49 @@
-NAME	:=	ducks
+NAME		:=	ducks
 
-CC		:=	c++
+OBJ_FOLDER	:=	obj
+SRC_FOLDER	:=	src
 
-SRCS	:=	main.cpp \
-			ADuck.cpp \
-			MallardDuck.cpp \
-			FlyWithWings.cpp \
-			FlyNoWay.cpp \
-			MuteQuack.cpp \
-			Quack.cpp \
-			Squeak.cpp
+CC			:=	c++
 
-OBJS	:=	$(SRCS:%.cpp=%.o)
+SRCS		:=	test/main.cpp \
+				ADuck/ADuck.cpp \
+				ADuck/MallardDuck.cpp \
+				IFlyBehavior/FlyWithWings.cpp \
+				IFlyBehavior/FlyNoWay.cpp \
+				IQuackBehavior/MuteQuack.cpp \
+				IQuackBehavior/Quack.cpp \
+				IQuackBehavior/Squeak.cpp
 
-CFLAGS	=	-Wall -Wextra -Werror -std=c++98
-DFLAG	:=	-g -D DEBUG=1
+OBJS		:=	$(SRCS:%.cpp=$(OBJ_FOLDER)/%.o)
+
+CFLAGS		=	-Wall -Wextra -Werror -std=c++98
+DFLAG		:=	-g -D DEBUG=1
 
 all:	$(NAME)
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
-$(OBJS): %.o: %.cpp
+$(OBJS): $(OBJ_FOLDER)/%.o: $(SRC_FOLDER)/%.cpp
+	@mkdir -p $(@D)
 	$(CC) -c $(CFLAGS) $< -o $@
 
 debug: CFLAGS += $(DFLAG)
 debug: re
 	./$(NAME)
 
+
 clean:
-	rm -fr $(OBJS)
+	rm -fr $(OBJ_FOLDER)
 
 fclean: clean
 	rm -fr $(NAME) $(NAME).dSYM
 
 re: fclean all
 
+
 val:
 	valgrind --leak-check=full -s ./$(NAME)
+
 
 .PHONY: clean fclean re val ducks

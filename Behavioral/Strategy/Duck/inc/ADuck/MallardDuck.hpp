@@ -1,9 +1,9 @@
 #pragma once
 # include "ADuck.hpp"
-# include "quackBehaviors.h"
-# include "flyBehaviors.h"
+# include "../IFlyBehavior/IFlyBehaviors.h"
+# include "../IQuackBehavior/IQuackBehaviors.h"
 
-class MallardDuck :  public ADuck
+class MallardDuck : public ADuck
 {
 	public:
 		MallardDuck(void);
