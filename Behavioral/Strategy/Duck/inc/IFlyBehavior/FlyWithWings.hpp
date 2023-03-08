@@ -11,6 +11,7 @@ class FlyWithWings: virtual public IFlyBehavior
 		FlyWithWings & operator=(FlyWithWings const & rhs);
 	
 		void	fly(void) const;
+		IFlyBehavior * clone(void) const;
 
 	protected:
 

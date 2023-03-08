@@ -13,12 +13,16 @@ class ADuck
 		ADuck & operator=(ADuck const & rhs);
 
 		virtual void display(void) const = 0;
+		virtual ADuck * clone(void) const = 0;
 
 		void	performFly(void);
 		void	performQuack(void);
 		
 		void	setFlyBehavior(IFlyBehavior * flyBehavior);
 		void	setQuackBehavior(IQuackBehavior * quackBehavior);
+
+		IFlyBehavior const & getFlyBehavior(void) const;
+		IQuackBehavior const & getQuackBehavior(void) const;
 
 	protected:
 		IFlyBehavior *flyBehavior;

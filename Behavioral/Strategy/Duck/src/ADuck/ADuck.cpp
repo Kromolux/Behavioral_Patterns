@@ -10,13 +10,14 @@ ADuck::ADuck(void)
 	this->quackBehavior = NULL;
 }
 
+// abstract class will never be called?
 ADuck::ADuck(ADuck const & rhs)
 {
 	#if DEBUG
 		std::cout << COLOR_GREEN << this << " [ADuck] copy constructor called.\n" << COLOR_DEFAULT;
 	#endif
-	this->flyBehavior = rhs.flyBehavior;
-	this->quackBehavior = rhs.quackBehavior;
+	this->flyBehavior = rhs.getFlyBehavior().clone();
+	this->quackBehavior = rhs.getQuackBehavior().clone();
 }
 
 ADuck::~ADuck(void)
@@ -26,16 +27,14 @@ ADuck::~ADuck(void)
 	#endif
 }
 
+// abstract class will never be called?
 ADuck & ADuck::operator=(ADuck const & rhs)
 {
 	#if DEBUG
 		std::cout << COLOR_GREEN << this << " [ADuck] copy assignment operator called.\n" << COLOR_DEFAULT;
 	#endif
 	if (this != &rhs)
-	{
-		//this->~ADuck();
-		//new (this) ADuck(rhs);
-	}
+		this->~ADuck();
 	return (*this);
 }
 
@@ -71,4 +70,21 @@ void	ADuck::setQuackBehavior(IQuackBehavior * quackBehavior)
 	#endif
 	delete this->quackBehavior;
 	this->quackBehavior = quackBehavior;
+}
+
+
+IFlyBehavior const & ADuck::getFlyBehavior(void) const
+{
+	#if DEBUG
+		std::cout << COLOR_YELLOW << this << " [ADuck] getFlyBehavior called.\n" << COLOR_DEFAULT;
+	#endif
+	return (*this->flyBehavior);
+}
+
+IQuackBehavior const & ADuck::getQuackBehavior(void) const
+{
+	#if DEBUG
+		std::cout << COLOR_YELLOW << this << " [ADuck] getQuackBehavior called.\n" << COLOR_DEFAULT;
+	#endif
+	return (*this->quackBehavior);
 }

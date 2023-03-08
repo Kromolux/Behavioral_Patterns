@@ -13,6 +13,7 @@ class ModelDuck : public ADuck
 		ModelDuck & operator=(ModelDuck const & rhs);
 
 		void	display(void) const;
+		ADuck * clone(void) const;
 
 	protected:
 

@@ -42,3 +42,11 @@ void	MuteQuack::quack(void) const
 	#endif
 	std::cout << "<< Silence >>\n";
 }
+
+IQuackBehavior * MuteQuack::clone(void) const
+{
+	#if DEBUG
+		std::cout << COLOR_YELLOW << this << " [MuteQuack] clone called.\n" << COLOR_DEFAULT;
+	#endif
+	return (new MuteQuack);
+}

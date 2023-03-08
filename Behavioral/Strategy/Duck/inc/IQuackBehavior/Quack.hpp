@@ -11,6 +11,7 @@ class Quack: virtual public IQuackBehavior
 		Quack & operator=(Quack const & rhs);
 	
 		void	quack(void) const;
+		IQuackBehavior * clone(void) const;
 
 	protected:
 

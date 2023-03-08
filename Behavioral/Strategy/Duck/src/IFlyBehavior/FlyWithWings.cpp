@@ -42,3 +42,11 @@ void	FlyWithWings::fly(void) const
 	#endif
 	std::cout << "I'm flying with my wings!\n";
 }
+
+IFlyBehavior * FlyWithWings::clone(void) const
+{
+	#if DEBUG
+		std::cout << COLOR_YELLOW << this << " [FlyWithWings] clone called.\n" << COLOR_DEFAULT;
+	#endif
+	return (new FlyWithWings);
+}

@@ -42,3 +42,11 @@ void	Squeak::quack(void) const
 	#endif
 	std::cout << "<< Squeak Squeak >>\n";
 }
+
+IQuackBehavior * Squeak::clone(void) const
+{
+	#if DEBUG
+		std::cout << COLOR_YELLOW << this << " [Squeak] clone called.\n" << COLOR_DEFAULT;
+	#endif
+	return (new Squeak);
+}

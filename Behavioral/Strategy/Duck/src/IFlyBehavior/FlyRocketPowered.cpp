@@ -42,3 +42,11 @@ void	FlyRocketPowered::fly(void) const
 	#endif
 	std::cout << "I'm flying with a rocket!\n";
 }
+
+IFlyBehavior * FlyRocketPowered::clone(void) const
+{
+	#if DEBUG
+		std::cout << COLOR_YELLOW << this << " [FlyRocketPowered] clone called.\n" << COLOR_DEFAULT;
+	#endif
+	return (new FlyRocketPowered);
+}

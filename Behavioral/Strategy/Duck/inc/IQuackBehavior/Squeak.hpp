@@ -11,6 +11,7 @@ class Squeak: virtual public IQuackBehavior
 		Squeak & operator=(Squeak const & rhs);
 	
 		void	quack(void) const;
+		IQuackBehavior * clone(void) const;
 
 	protected:
 

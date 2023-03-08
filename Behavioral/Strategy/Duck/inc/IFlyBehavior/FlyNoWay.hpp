@@ -12,6 +12,8 @@ class FlyNoWay: virtual public IFlyBehavior
 	
 		void	fly(void) const;
 
+		IFlyBehavior * clone(void) const;
+
 	protected:
 
 	private:

@@ -42,3 +42,11 @@ void	FlyNoWay::fly(void) const
 	#endif
 	std::cout << "I can't fly!\n";
 }
+
+IFlyBehavior * FlyNoWay::clone(void) const
+{
+	#if DEBUG
+		std::cout << COLOR_YELLOW << this << " [FlyNoWay] clone called.\n" << COLOR_DEFAULT;
+	#endif
+	return (new FlyNoWay);
+}

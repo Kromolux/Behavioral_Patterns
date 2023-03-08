@@ -30,9 +30,9 @@ $(OBJS): $(OBJ_FOLDER)/%.o: $(SRC_FOLDER)/%.cpp
 	@mkdir -p $(@D)
 	$(CC) -c $(CFLAGS) $< -o $@
 
-debug: CFLAGS += $(DFLAG)
-debug: re
-	./$(NAME)
+debug:	CFLAGS += $(DFLAG)
+debug:	all
+		./$(NAME)
 
 
 clean:

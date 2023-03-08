@@ -11,6 +11,7 @@ class MuteQuack: virtual public IQuackBehavior
 		MuteQuack & operator=(MuteQuack const & rhs);
 	
 		void	quack(void) const;
+		IQuackBehavior * clone(void) const;
 
 	protected:
 

@@ -11,6 +11,7 @@ class FlyRocketPowered: virtual public IFlyBehavior
 		FlyRocketPowered & operator=(FlyRocketPowered const & rhs);
 	
 		void	fly(void) const;
+		IFlyBehavior * clone(void) const;
 
 	protected:
 

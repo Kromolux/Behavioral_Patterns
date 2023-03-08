@@ -42,3 +42,11 @@ void	Quack::quack(void) const
 	#endif
 	std::cout << "<< Quack Quack >>\n";
 }
+
+IQuackBehavior * Quack::clone(void) const
+{
+	#if DEBUG
+		std::cout << COLOR_YELLOW << this << " [Quack] clone called.\n" << COLOR_DEFAULT;
+	#endif
+	return (new Quack);
+}
