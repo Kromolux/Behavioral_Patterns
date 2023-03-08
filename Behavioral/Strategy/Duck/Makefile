@@ -8,8 +8,10 @@ CC			:=	c++
 SRCS		:=	test/main.cpp \
 				ADuck/ADuck.cpp \
 				ADuck/MallardDuck.cpp \
+				ADuck/ModelDuck.cpp \
 				IFlyBehavior/FlyWithWings.cpp \
 				IFlyBehavior/FlyNoWay.cpp \
+				IFlyBehavior/FlyRocketPowered.cpp \
 				IQuackBehavior/MuteQuack.cpp \
 				IQuackBehavior/Quack.cpp \
 				IQuackBehavior/Squeak.cpp

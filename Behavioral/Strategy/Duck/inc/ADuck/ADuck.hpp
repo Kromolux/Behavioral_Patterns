@@ -14,9 +14,12 @@ class ADuck
 
 		virtual void display(void) const = 0;
 
-		void performFly(void);
-		void performQuack(void);
+		void	performFly(void);
+		void	performQuack(void);
 		
+		void	setFlyBehavior(IFlyBehavior * flyBehavior);
+		void	setQuackBehavior(IQuackBehavior * quackBehavior);
+
 	protected:
 		IFlyBehavior *flyBehavior;
 		IQuackBehavior *quackBehavior;

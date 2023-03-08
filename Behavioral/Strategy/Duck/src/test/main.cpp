@@ -19,5 +19,19 @@ int	main(void)
 		mDuck.performFly();
 		mDuck.performQuack();
 	}
+	std::cout << "\n\n";
+	{
+		ModelDuck mDuck;
+		mDuck.display();
+		mDuck.performFly();
+		mDuck.performQuack();
+	std::cout << "\n\n";
+		mDuck.setFlyBehavior(new FlyRocketPowered);
+		mDuck.setQuackBehavior(new Squeak);
+
+		mDuck.display();
+		mDuck.performFly();
+		mDuck.performQuack();
+	}
 	return (0);
 }
