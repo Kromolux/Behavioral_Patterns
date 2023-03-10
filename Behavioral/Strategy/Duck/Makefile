@@ -18,7 +18,7 @@ SRCS		:=	test/main.cpp \
 
 OBJS		:=	$(SRCS:%.cpp=$(OBJ_FOLDER)/%.o)
 
-CFLAGS		=	-Wall -Wextra -Werror -std=c++98
+CFLAGS		=	-Wall -Wextra -Werror -std=c++98 -Wfatal-errors -Wconversion
 DFLAG		:=	-g -D DEBUG=1
 
 all:	$(NAME)

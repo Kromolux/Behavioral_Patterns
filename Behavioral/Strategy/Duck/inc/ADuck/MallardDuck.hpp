@@ -8,12 +8,10 @@ class MallardDuck : public ADuck
 	public:
 		MallardDuck(void);
 		MallardDuck(MallardDuck const & rhs);
-		MallardDuck(ADuck const * rhs);
+		MallardDuck(ADuck const & rhs);
 		~MallardDuck(void);
 
 		MallardDuck & operator=(MallardDuck const & rhs);
-		MallardDuck & operator=(MallardDuck const * rhs);
-		MallardDuck & operator=(ADuck const * rhs);
 
 		void	display(void) const;
 		ADuck * clone(void) const;

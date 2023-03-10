@@ -8,6 +8,7 @@ class ModelDuck : public ADuck
 	public:
 		ModelDuck(void);
 		ModelDuck(ModelDuck const & rhs);
+		ModelDuck(ADuck const & rhs);
 		~ModelDuck(void);
 
 		ModelDuck & operator=(ModelDuck const & rhs);

@@ -7,10 +7,7 @@ class ADuck
 {
 	public:
 		ADuck(void);
-		ADuck(ADuck const & rhs);
 		virtual ~ADuck(void);
-
-		ADuck & operator=(ADuck const & rhs);
 
 		virtual void display(void) const = 0;
 		virtual ADuck * clone(void) const = 0;
@@ -29,4 +26,7 @@ class ADuck
 		IQuackBehavior *quackBehavior;
 	
 	private:
+		// should be private, can't copy object instance from the abstract class itself!?
+		ADuck(ADuck const & rhs);
+		ADuck & operator=(ADuck const & rhs);
 };

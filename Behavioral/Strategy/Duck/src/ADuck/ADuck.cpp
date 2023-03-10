@@ -11,6 +11,7 @@ ADuck::ADuck(void)
 }
 
 // abstract class will never be called?
+/*
 ADuck::ADuck(ADuck const & rhs)
 {
 	#if DEBUG
@@ -19,6 +20,7 @@ ADuck::ADuck(ADuck const & rhs)
 	this->flyBehavior = rhs.getFlyBehavior().clone();
 	this->quackBehavior = rhs.getQuackBehavior().clone();
 }
+*/
 
 ADuck::~ADuck(void)
 {
@@ -27,16 +29,26 @@ ADuck::~ADuck(void)
 	#endif
 }
 
-// abstract class will never be called?
+// abstract class will never be called? It should not, because it don't know about the implementatons
+/*
 ADuck & ADuck::operator=(ADuck const & rhs)
 {
 	#if DEBUG
 		std::cout << COLOR_GREEN << this << " [ADuck] copy assignment operator called.\n" << COLOR_DEFAULT;
 	#endif
 	if (this != &rhs)
-		this->~ADuck();
+	{
+		//this->~ADuck();
+		//delete this;
+		// *this = rhs;
+		delete this->flyBehavior;
+		delete this->quackBehavior;
+		this->flyBehavior = rhs.getFlyBehavior().clone();
+		this->quackBehavior = rhs.getQuackBehavior().clone();
+	}
 	return (*this);
 }
+*/
 
 void	ADuck::performFly(void)
 {

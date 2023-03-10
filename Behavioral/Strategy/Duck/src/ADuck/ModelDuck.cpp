@@ -14,8 +14,18 @@ ModelDuck::ModelDuck(ModelDuck const & rhs) : ADuck()
 	#if DEBUG
 		std::cout << COLOR_GREEN << this << " [ModelDuck] copy constructor called.\n" << COLOR_DEFAULT;
 	#endif
-	this->flyBehavior = rhs.flyBehavior;
-	this->quackBehavior = rhs.quackBehavior;
+	this->flyBehavior = rhs.flyBehavior->clone();
+	this->quackBehavior = rhs.quackBehavior->clone();
+}
+
+
+ModelDuck::ModelDuck(ADuck const & rhs)// : ADuck()
+{
+	#if DEBUG
+		std::cout << COLOR_GREEN << this << " [ModelDuck] (overload ADuck *) copy constructor called.\n" << COLOR_DEFAULT;
+	#endif
+	this->flyBehavior = rhs.getFlyBehavior().clone();
+	this->quackBehavior = rhs.getQuackBehavior().clone();
 }
 
 ModelDuck::~ModelDuck(void)

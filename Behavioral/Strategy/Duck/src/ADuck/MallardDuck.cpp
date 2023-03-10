@@ -9,6 +9,7 @@ MallardDuck::MallardDuck(void)
 	this->quackBehavior = new Quack();
 }
 
+
 MallardDuck::MallardDuck(MallardDuck const & rhs) : ADuck()
 {
 	#if DEBUG
@@ -18,13 +19,14 @@ MallardDuck::MallardDuck(MallardDuck const & rhs) : ADuck()
 	this->quackBehavior = rhs.quackBehavior->clone();
 }
 
-MallardDuck::MallardDuck(ADuck const * rhs)// : ADuck()
+// overload needed to create a copy from abstract object
+MallardDuck::MallardDuck(ADuck const & rhs)// : ADuck()
 {
 	#if DEBUG
 		std::cout << COLOR_GREEN << this << " [MallardDuck] (overload ADuck *) copy constructor called.\n" << COLOR_DEFAULT;
 	#endif
-	this->flyBehavior = rhs->getFlyBehavior().clone();
-	this->quackBehavior = rhs->getQuackBehavior().clone();
+	this->flyBehavior = rhs.getFlyBehavior().clone();
+	this->quackBehavior = rhs.getQuackBehavior().clone();
 }
 
 MallardDuck::~MallardDuck(void)
@@ -42,32 +44,6 @@ MallardDuck & MallardDuck::operator=(MallardDuck const & rhs)
 		std::cout << COLOR_GREEN << this << " [MallardDuck] copy assignment operator called.\n" << COLOR_DEFAULT;
 	#endif
 	if (this != &rhs)
-	{
-		this->~MallardDuck();
-		new (this) MallardDuck(rhs);
-	}
-	return (*this);
-}
-
-MallardDuck & MallardDuck::operator=(MallardDuck const * rhs)
-{
-	#if DEBUG
-		std::cout << COLOR_GREEN << this << " [MallardDuck] (overload *) copy assignment operator called.\n" << COLOR_DEFAULT;
-	#endif
-	if (this != rhs)
-	{
-		this->~MallardDuck();
-		new (this) MallardDuck(rhs);
-	}
-	return (*this);
-}
-
-MallardDuck & MallardDuck::operator=(ADuck const * rhs)
-{
-	#if DEBUG
-		std::cout << COLOR_GREEN << this << " [MallardDuck] (overload ADuck *) copy assignment operator called.\n" << COLOR_DEFAULT;
-	#endif
-	if (this != rhs)
 	{
 		this->~MallardDuck();
 		new (this) MallardDuck(rhs);
