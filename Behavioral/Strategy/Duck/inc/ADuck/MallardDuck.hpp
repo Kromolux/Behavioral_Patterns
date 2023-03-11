@@ -14,7 +14,7 @@ class MallardDuck : public ADuck
 		MallardDuck & operator=(MallardDuck const & rhs);
 
 		void	display(void) const;
-		ADuck * clone(void) const;
+		ADuck & clone(void) const;
 
 	protected:
 

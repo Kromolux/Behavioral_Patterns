@@ -58,10 +58,10 @@ void	ModelDuck::display(void) const
 	std::cout << "I'm a model duck!\n";
 }
 
-ADuck * ModelDuck::clone(void) const
+ADuck & ModelDuck::clone(void) const
 {
 	#if DEBUG
 		std::cout << COLOR_YELLOW << this << " [ModelDuck] clone called.\n" << COLOR_DEFAULT;
 	#endif
-	return (new ModelDuck(*this));
+	return (*(new ModelDuck(*this)));
 }

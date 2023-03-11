@@ -33,7 +33,7 @@ int	main(void)
 	delete b;
 
 	terminalPrint("Clone abstract class ADuck b");
-	b = a->clone();
+	b = &a->clone();
 	// *b = *a; // will not compile -> ‘ADuck& ADuck::operator=(const ADuck&)’ is private within this context
 	terminalPrint("delete object a");
 	delete a;
@@ -70,18 +70,48 @@ int	main(void)
 
 	terminalPrint("delete object c");
 	delete a;
-	
-	std::cout << "\n\n";
-	{
-		MallardDuck mDuck;
-		mDuck.display();
-		mDuck.performFly();
-		mDuck.performQuack();
-	}
+
+	terminalPrint("Create concreate object MallardDuck as pointer to MallardDuck *mDuck");
+	MallardDuck *mDuck = new MallardDuck;
+
+	terminalPrint("Create copy from MallardDuck *cmDuck");
+	MallardDuck *cmDuck = new MallardDuck(*mDuck);
+
+	terminalPrint("Create new MallardDuck *otherDuck");
+	MallardDuck *otherDuck = new MallardDuck;
+
+	terminalPrint("Assign *otherDuck = *mDuck");
+	*otherDuck = *mDuck;
+
+	terminalPrint("call object member functions from mDuck");
+	mDuck->display();
+	mDuck->performFly();
+	mDuck->performQuack();
+
+	terminalPrint("delete object mDuck");
+	delete mDuck;
+
+	terminalPrint("call object member functions from cmDuck");
+	cmDuck->display();
+	cmDuck->performFly();
+	cmDuck->performQuack();
+
+	terminalPrint("delete object cmDuck");
+	delete cmDuck;
+
+
+	terminalPrint("call object member functions from otherDuck");
+	otherDuck->display();
+	otherDuck->performFly();
+	otherDuck->performQuack();
+
+	terminalPrint("delete object otherDuck");
+	delete otherDuck;
 	std::cout << "\n\n";
 	{
 		ModelDuck mDuck;
-		ModelDuck mmDuck;
+		terminalPrint("Create copy object");
+		ModelDuck mmDuck(mDuck);
 		mmDuck = mDuck;
 		mDuck.setFlyBehavior(new FlyRocketPowered);
 		mDuck.setQuackBehavior(new Squeak);

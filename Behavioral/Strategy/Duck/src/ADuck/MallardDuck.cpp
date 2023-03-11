@@ -59,10 +59,10 @@ void	MallardDuck::display(void) const
 	std::cout << "I'm a real Mallard duck!\n";
 }
 
-ADuck * MallardDuck::clone(void) const
+ADuck & MallardDuck::clone(void) const
 {
 	#if DEBUG
 		std::cout << COLOR_YELLOW << this << " [MallardDuck] clone called.\n" << COLOR_DEFAULT;
 	#endif
-	return (new MallardDuck(*this));
+	return (*(new MallardDuck(*this)));
 }

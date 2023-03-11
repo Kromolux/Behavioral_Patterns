@@ -10,7 +10,7 @@ class ADuck
 		virtual ~ADuck(void);
 
 		virtual void display(void) const = 0;
-		virtual ADuck * clone(void) const = 0;
+		virtual ADuck & clone(void) const = 0;
 
 		void	performFly(void);
 		void	performQuack(void);
