@@ -26,6 +26,8 @@ This is my way of learning "Design Patterns" with coded examples.
 #### Behavioral
 ##### 1. Strategy
 > Defines a family of algorithms, encapsulates each one, and makes them interchangeable. Strategy lets the algorithm vary independently from clients that use it.
+##### 2. Observer
+> Defines a one-to-many dependency between objects so that, when one object changes state, all of its dependents are notified and updated automatically.
 
 #### Creational
 
