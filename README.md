@@ -21,13 +21,14 @@ This is my way of learning "Design Patterns" with coded examples.
 - Encapsulate what varies.
 - Favor composition over inheritance.
 - Program to inerface, not implementation.
+- Strive for loosely coupled designs between objects that interact.
 
 ### Patterns
 #### Behavioral
 ##### 1. Strategy
-> Defines a family of algorithms, encapsulates each one, and makes them interchangeable. Strategy lets the algorithm vary independently from clients that use it.
+> Strategy - defines a family of algorithms, encapsulates each one, and makes them interchangeable. Strategy lets the algorithm vary independently from clients that use it.
 ##### 2. Observer
-> Defines a one-to-many dependency between objects so that, when one object changes state, all of its dependents are notified and updated automatically.
+> Observer - defines a one-to-many dependency between objects so that, when one object changes state, all of its dependents are notified and updated automatically.
 
 #### Creational
 
