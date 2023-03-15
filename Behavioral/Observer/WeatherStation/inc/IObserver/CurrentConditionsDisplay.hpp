@@ -1,9 +1,9 @@
 #pragma once
 # include "IObserver.hpp"
-//# include "../IDisplayElement/IDisplayElement.hpp"
+# include "../IDisplayElement/IDisplayElement.hpp"
 # include "../ISubject/WeatherData.hpp"
 
-class CurrentConditionsDisplay : virtual public IObserver//, virtual public IDisplayElement
+class CurrentConditionsDisplay : virtual public IObserver, virtual public IDisplayElement
 {
 	public:
 		CurrentConditionsDisplay(WeatherData & weatherData);

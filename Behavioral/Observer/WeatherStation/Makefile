@@ -7,7 +7,10 @@ CC			:=	g++
 
 SRCS		:=	test/main.cpp \
 				ISubject/WeatherData.cpp \
-				IObserver/CurrentConditionsDisplay.cpp
+				IObserver/CurrentConditionsDisplay.cpp \
+				IObserver/ForecastDisplay.cpp \
+				IObserver/StatisticsDisplay.cpp \
+				IObserver/HeatIndexDisplay.cpp
 
 OBJS		:=	$(SRCS:%.cpp=$(OBJ_FOLDER)/%.o)
 

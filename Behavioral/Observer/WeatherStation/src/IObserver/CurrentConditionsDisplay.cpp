@@ -5,6 +5,7 @@ CurrentConditionsDisplay::CurrentConditionsDisplay(WeatherData & weatherData) : 
 	#if DEBUG
 		std::cout << COLOR_GREEN << this << " [CurrentConditionsDisplay] default constructor called.\n" << COLOR_DEFAULT;
 	#endif
+	weatherData.registerObserver(this);
 	this->temperature = 0.0;
 	this->humidity = 0.0;
 }
@@ -54,5 +55,6 @@ void CurrentConditionsDisplay::display(void)
 	#if DEBUG
 		std::cout << COLOR_YELLOW << this << " [CurrentConditionsDisplay] display called.\n" << COLOR_DEFAULT;
 	#endif
+	std::cout << std::fixed << std::setprecision(1);
 	std::cout << "Current conditions: " << this->temperature << " F degrees and " << this->humidity << " % humidity\n";
 }
