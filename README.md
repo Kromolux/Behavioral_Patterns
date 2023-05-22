@@ -22,6 +22,7 @@ This is my way of learning "Design Patterns" with coded examples.
 - Favor composition over inheritance.
 - Program to inerface, not implementation.
 - Strive for loosely coupled designs between objects that interact.
+- Classes should be open for extension, but closed for modification.
 
 ### Patterns
 #### Behavioral
@@ -33,3 +34,5 @@ This is my way of learning "Design Patterns" with coded examples.
 #### Creational
 
 #### Structural
+##### 3. Decorator
+> Decorator - Attach additional responsibilities to an object dynamically. Decorators provide a flexible alternative to subclassing for extending functionality.
