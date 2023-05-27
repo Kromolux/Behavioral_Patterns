@@ -5,6 +5,7 @@ ABeverage::ABeverage(void)
 	#if DEBUG
 		std::cout << COLOR_GREEN << this << " [ABeverage] default constructor called.\n" << COLOR_DEFAULT;
 	#endif
+	this->_description = "Unknown Beverage";
 }
 
 ABeverage::~ABeverage(void)
@@ -19,5 +20,5 @@ std::string ABeverage::getDescription(void) const
 	#if DEBUG
 		std::cout << COLOR_YELLOW << this << " [ABeverage] getDescription called.\n" << COLOR_DEFAULT;
 	#endif
-	return (this->description);
+	return (this->_description);
 }

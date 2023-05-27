@@ -7,7 +7,7 @@ class HouseBlend : public ABeverage
 		HouseBlend(void);
 		~HouseBlend(void);
 
-		std::string getDescription(void) const;
+		//std::string getDescription(void) const;
 		double getCost(void) const;
 
 };

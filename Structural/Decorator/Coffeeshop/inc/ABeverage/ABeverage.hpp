@@ -8,10 +8,10 @@ class ABeverage
 		ABeverage(void);
 		virtual ~ABeverage(void);
 
-		std::string getDescription(void) const;
+		virtual std::string getDescription(void) const;
 		virtual double getCost(void) const = 0;
 
 	protected:
-		std::string description;
+		std::string _description;
 
 };

@@ -5,7 +5,7 @@ DarkRoast::DarkRoast(void)
 	#if DEBUG
 		std::cout << COLOR_GREEN << this << " [DarkRoast] default constructor called.\n" << COLOR_DEFAULT;
 	#endif
-	this->description = "Dark Roast Coffee";
+	this->_description = "Dark Roast Coffee";
 }
 
 DarkRoast::~DarkRoast(void)

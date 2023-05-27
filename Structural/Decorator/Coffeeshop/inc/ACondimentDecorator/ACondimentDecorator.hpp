@@ -4,8 +4,11 @@
 class ACondimentDecorator : public ABeverage
 {
 	public:
-		virtual std::string getDescription(void) const;
+		ACondimentDecorator(void);
+		virtual ~ACondimentDecorator(void);
+		virtual std::string getDescription(void) const = 0;
+		virtual double getCost(void) const = 0;
 
 	protected:
-		static ABeverage & beverage;
+		ABeverage * _beverage;
 };

@@ -8,7 +8,10 @@ CC			:=	c++
 SRCS		:=	test/main.cpp \
 				ABeverage/ABeverage.cpp \
 				ABeverage/HouseBlend.cpp \
-				ACondimentDecorator/ACondimentDecorator.cpp
+				ABeverage/DarkRoast.cpp \
+				ACondimentDecorator/ACondimentDecorator.cpp \
+				ACondimentDecorator/Milk.cpp \
+				ACondimentDecorator/Mocha.cpp
 
 
 OBJS		:=	$(SRCS:%.cpp=$(OBJ_FOLDER)/%.o)

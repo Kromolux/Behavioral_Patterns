@@ -5,7 +5,7 @@ HouseBlend::HouseBlend(void)
 	#if DEBUG
 		std::cout << COLOR_GREEN << this << " [HouseBlend] default constructor called.\n" << COLOR_DEFAULT;
 	#endif
-	this->description = "House Blend Coffee";
+	this->_description = "House Blend Coffee";
 }
 
 HouseBlend::~HouseBlend(void)

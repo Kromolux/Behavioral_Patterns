@@ -4,7 +4,7 @@
 class Milk : public ACondimentDecorator
 {
 	public:
-		Milk(ABeverage &beverage);
+		Milk(ABeverage *beverage);
 		~Milk(void);
 	
 		std::string getDescription(void) const;

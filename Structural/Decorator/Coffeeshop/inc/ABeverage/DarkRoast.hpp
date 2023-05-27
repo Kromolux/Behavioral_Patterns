@@ -7,7 +7,7 @@ class DarkRoast : public ABeverage
 		DarkRoast(void);
 		~DarkRoast(void);
 
-		std::string getDescription(void) const;
+		//std::string getDescription(void) const;
 		double getCost(void) const;
 
 };
